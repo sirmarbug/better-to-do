@@ -38,12 +38,16 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Button from 'primevue/button'
+import { auth } from '../firebase/'
 
 export default defineComponent({
   name: 'HelloWorld',
   components: { Button },
   props: {
     msg: String
+  },
+  setup () {
+    console.log(auth)
   }
 })
 </script>
