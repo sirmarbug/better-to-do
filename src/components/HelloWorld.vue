@@ -30,14 +30,17 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <Button label="Submit" icon="pi pi-check" iconPos="right" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import Button from 'primevue/button'
 
 export default defineComponent({
   name: 'HelloWorld',
+  components: { Button },
   props: {
     msg: String
   }
