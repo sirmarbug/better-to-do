@@ -31,6 +31,7 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
     <Button label="Submit" icon="pi pi-check" iconPos="right" />
+    <p>{{ $t('hello') }}</p>
   </div>
 </template>
 
