@@ -3,7 +3,7 @@
     <div class="p-grid">
       <div class="p-col-7 auth-layout-image" :style="`background-image: url(https://picsum.photos/1920/1080)`">
       </div>
-      <div class="p-col-5">
+      <div class="p-col-5 auth-layout-content p-d-flex p-flex-column p-justify-around">
         <div class="p-grid">
           <div class="p-col-12 p-d-flex p-justify-center">
             <span class="p-mr-3" @click="onItemClick('/login')">Login</span>
@@ -39,7 +39,12 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.auth-layout-image {
+.auth-layout-image,
+.auth-layout-content {
   height: 100vh;
+}
+
+.auth-layout-content {
+  background-color: $catskill-white
 }
 </style>

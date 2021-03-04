@@ -1,6 +1,8 @@
 <template>
   <AuthLayout>
-    <h1>Login</h1>
+    <template #content>
+      <h1>Login</h1>
+    </template>
   </AuthLayout>
 </template>
 
