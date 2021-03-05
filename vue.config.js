@@ -8,7 +8,6 @@ module.exports = {
         prependData: `
           @import "@/styles/colors.scss";
           @import "@/styles/variables.scss";
-          @import "@/styles/typography.scss";
         `
       }
     }
