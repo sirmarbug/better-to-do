@@ -1,13 +1,19 @@
 <template>
-  <div class="login">
-    <h1>Login</h1>
-  </div>
+  <AuthLayout>
+    <template #content>
+      <h1 class="p-text-center">Login</h1>
+      <LoginForm/>
+    </template>
+  </AuthLayout>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import AuthLayout from '@/components/AuthLayout.vue'
+import LoginForm from '@/components/auth/login/LoginForm.vue'
 
 export default defineComponent({
-  name: 'Login'
+  name: 'Login',
+  components: { AuthLayout, LoginForm }
 })
 </script>
