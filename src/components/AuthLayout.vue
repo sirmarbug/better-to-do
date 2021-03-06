@@ -5,12 +5,6 @@
       </div>
       <div class="p-col-5 auth-layout-content p-d-flex p-flex-column p-justify-center">
         <div class="p-grid">
-          <div class="p-col-12 p-d-flex p-justify-center">
-            <span class="p-mr-3" @click="onItemClick('/login')">Login</span>
-            <span class="p-mr-3" @click="onItemClick('/register')">Register</span>
-          </div>
-        </div>
-        <div class="p-grid">
           <div class="p-col-12">
             <slot name="content"/>
           </div>
