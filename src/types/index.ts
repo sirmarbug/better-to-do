@@ -1,5 +1,6 @@
 export interface AppState {
-  auth: AuthState;
+  loading: boolean;
+  auth?: AuthState;
 }
 
 export interface AuthState {

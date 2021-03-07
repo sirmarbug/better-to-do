@@ -39,14 +39,14 @@ import { defineComponent, reactive } from 'vue'
 import InputText from 'primevue/inputtext'
 import Button from 'primevue/button'
 import { useRouter } from 'vue-router'
-import { useStore } from 'vuex'
+import { useAppStore } from '@/store'
 
 export default defineComponent({
   name: 'RegisterForm',
   components: { InputText, Button },
   setup () {
     const router = useRouter()
-    const store = useStore()
+    const store = useAppStore()
     const loginForm = reactive({
       email: '',
       password: '',

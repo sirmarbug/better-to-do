@@ -1,9 +1,18 @@
-import { createStore } from 'vuex'
+import { createStore, Store, useStore } from 'vuex'
+import { state } from '@/store/state'
+import { mutations } from '@/store/mutations'
+import { actions } from '@/store/actions'
 import auth from '@/store/modules/auth'
 import { AppState } from '@/types'
 
-export default createStore<AppState>({
+export default createStore({
+  state,
+  mutations,
+  actions,
   modules: {
     auth
   }
 })
+
+export type AppStore = Store<AppState>
+export const useAppStore = (): AppStore => useStore<AppState>()
