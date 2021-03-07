@@ -9,3 +9,9 @@ export interface AuthState {
 export interface User {
   [key: string]: any;
 }
+
+export interface UserForm {
+  email: string;
+  password: string;
+  repeatPassword?: string;
+}
