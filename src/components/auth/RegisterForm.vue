@@ -39,7 +39,7 @@ import { defineComponent, reactive } from 'vue'
 import InputText from 'primevue/inputtext'
 import Button from 'primevue/button'
 import { useRouter } from 'vue-router'
-import { useAppStore } from '@/store'
+import { useAppStore } from '@/use'
 
 export default defineComponent({
   name: 'RegisterForm',
