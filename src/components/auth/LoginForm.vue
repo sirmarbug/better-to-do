@@ -3,18 +3,22 @@
     <Form @submit="onSubmit" :validation-schema="loginSchemat" v-slot="{ errors }">
       <div class="p-fluid p-grid p-mt-5">
         <div class="p-col-8 p-offset-2">
-          <div class="p-field">
-            <label for="email" :class="{ 'p-error': errors.email }">E-mail</label>
-            <Field name="email" id="email" type="text" class="p-inputtext p-component p-mb-1" :class="{ 'p-invalid': errors.email }" />
-            <small class="p-error">{{ errors.email }}</small>
-          </div>
+          <InputText
+            name="email"
+            type="text"
+            label="E-mail"
+            placeholder="Adres E-mail"
+            :errors="errors"
+          />
         </div>
         <div class="p-col-8 p-offset-2">
-          <div class="p-field">
-            <label for="password" :class="{ 'p-error': errors.password }">Password</label>
-            <Field name="password" id="password" type="password" class="p-inputtext p-component p-mb-1" :class="{ 'p-invalid': errors.password }" />
-            <small class="p-error">{{ errors.password }}</small>
-          </div>
+          <InputText
+            name="password"
+            type="password"
+            label="Password"
+            placeholder="Password"
+            :errors="errors"
+          />
         </div>
       </div>
       <div class="p-fluid p-grid p-mb-5">
@@ -36,12 +40,13 @@
 import { defineComponent } from 'vue'
 import Button from 'primevue/button'
 import { useRouter } from 'vue-router'
-import { Form, Field } from 'vee-validate'
+import { Form } from 'vee-validate'
 import * as Yup from 'yup'
+import InputText from '@/components/forms/InputText.vue'
 
 export default defineComponent({
   name: 'LoginForm',
-  components: { Button, Form, Field },
+  components: { Button, Form, InputText },
   setup () {
     const router = useRouter()
 
