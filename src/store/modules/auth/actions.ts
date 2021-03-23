@@ -26,5 +26,13 @@ export const actions: ActionTree<AuthState, AppState> = {
     } catch (e) {
       console.error(e)
     }
+  },
+  async loginWithEmail ({ state }, payload: UserForm) {
+    try {
+      const response = await auth.signInWithEmailAndPassword(payload.email, payload.password)
+      console.log(response)
+    } catch (e) {
+      console.error(e)
+    }
   }
 }

@@ -43,19 +43,22 @@ import { useRouter } from 'vue-router'
 import { Form } from 'vee-validate'
 import InputText from '@/components/forms/InputText.vue'
 import { loginSchema } from '@/plugins/yup'
+import { useAppStore } from '@/use'
 
 export default defineComponent({
   name: 'LoginForm',
   components: { Button, Form, InputText },
   setup () {
     const router = useRouter()
+    const store = useAppStore()
 
     const onCreateNowClick = () => {
       router.push({ path: '/register' })
     }
 
-    const onSubmit = (vaule: any, actions: any) => {
-      console.log('onSubmit', [vaule, actions])
+    const onSubmit = async (value: any, actions: any) => {
+      console.log('onSubmit', value)
+      await store.dispatch('auth/loginWithEmail', value)
     }
 
     return {
