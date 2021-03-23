@@ -1,6 +1,6 @@
 <template>
   <div class="login-form">
-    <Form @submit="onSubmit" :validation-schema="loginSchemat" v-slot="{ errors }">
+    <Form @submit="onSubmit" :validation-schema="loginSchema" v-slot="{ errors }">
       <div class="p-fluid p-grid p-mt-5">
         <div class="p-col-8 p-offset-2">
           <InputText
@@ -41,8 +41,8 @@ import { defineComponent } from 'vue'
 import Button from 'primevue/button'
 import { useRouter } from 'vue-router'
 import { Form } from 'vee-validate'
-import * as Yup from 'yup'
 import InputText from '@/components/forms/InputText.vue'
+import { loginSchema } from '@/plugins/yup'
 
 export default defineComponent({
   name: 'LoginForm',
@@ -58,16 +58,9 @@ export default defineComponent({
       console.log('onSubmit', [vaule, actions])
     }
 
-    const loginSchemat = Yup.object().shape({
-      email: Yup.string()
-        .required('Email is required'),
-      password: Yup.string()
-        .required('Password is required')
-    })
-
     return {
       onCreateNowClick,
-      loginSchemat,
+      loginSchema,
       onSubmit
     }
   }
