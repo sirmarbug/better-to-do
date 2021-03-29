@@ -1,6 +1,6 @@
 import { ActionTree } from 'vuex'
 import { AppState, AuthState, UserForm } from '@/types'
-import { createUser, loginWithEmail } from '@/firebase/api'
+import { createUser, loginWithEmail } from '@/api'
 
 export const actions: ActionTree<AuthState, AppState> = {
   async createUser ({ commit }, user: UserForm) {
