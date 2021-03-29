@@ -1,25 +1,33 @@
 <template>
   <div class="login-form">
-    <div class="p-fluid p-grid p-mt-5">
-      <div class="p-field p-col-8 p-offset-2">
-        <span class="p-float-label">
-            <InputText id="email" type="text" />
-            <label for="email">Address E-mail</label>
-        </span>
+    <Form @submit="onSubmit" :validation-schema="loginSchema" v-slot="{ errors }">
+      <div class="p-fluid p-grid p-mt-5">
+        <div class="p-col-8 p-offset-2">
+          <InputText
+            name="email"
+            type="text"
+            label="E-mail"
+            placeholder="Adres E-mail"
+            :errors="errors"
+          />
+        </div>
+        <div class="p-col-8 p-offset-2">
+          <InputText
+            name="password"
+            type="password"
+            label="Password"
+            placeholder="Password"
+            :errors="errors"
+          />
+        </div>
       </div>
-      <div class="p-field p-col-8 p-offset-2">
-        <span class="p-float-label">
-            <InputText id="password" type="password" />
-            <label for="password">Password</label>
-        </span>
+      <div class="p-fluid p-grid p-mb-5">
+        <div class="p-col-8 p-offset-2">
+          <Button type="submit" label="Login"/>
+        </div>
       </div>
-    </div>
-    <div class="p-fluid p-grid p-mb-5">
-      <div class="p-col-8 p-offset-2">
-        <Button label="Login"/>
-      </div>
-    </div>
-     <div class="p-grid">
+    </Form>
+    <div class="p-grid">
       <div class="p-col-8 p-offset-2 p-d-flex p-align-center">
         <span class="p-mr-2">Don't have an account?</span>
         <Button label="Create new" class="p-button-text" @click="onCreateNowClick" />
@@ -30,21 +38,34 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import InputText from 'primevue/inputtext'
 import Button from 'primevue/button'
 import { useRouter } from 'vue-router'
+import { Form } from 'vee-validate'
+import { InputText } from '@/components'
+import { loginSchema } from '@/plugins/yup'
+import { useAppStore } from '@/use'
 
 export default defineComponent({
   name: 'LoginForm',
-  components: { InputText, Button },
+  components: { Button, Form, InputText },
   setup () {
     const router = useRouter()
+    const store = useAppStore()
 
     const onCreateNowClick = () => {
       router.push({ path: '/register' })
     }
 
-    return { onCreateNowClick }
+    const onSubmit = async (value: any, actions: any) => {
+      console.log('onSubmit', value)
+      await store.dispatch('auth/loginWithEmail', value)
+    }
+
+    return {
+      onCreateNowClick,
+      loginSchema,
+      onSubmit
+    }
   }
 })
 </script>

@@ -1,27 +1,19 @@
 import { ActionTree } from 'vuex'
 import { AppState, AuthState, UserForm } from '@/types'
-import { auth } from '@/firebase'
-
-const fakeApi = () => {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve({ username: 'adamkowski' })
-    }, 1000)
-  })
-}
+import { createUser, loginWithEmail } from '@/api'
 
 export const actions: ActionTree<AuthState, AppState> = {
-  async fetchUser ({ commit }) {
+  async createUser ({ commit }, user: UserForm) {
     try {
-      const response = await fakeApi()
-      commit('SET_USER', response)
+      const response = await createUser(user)
+      console.log(response)
     } catch (e) {
       console.error(e)
     }
   },
-  async createUser ({ commit }, user: UserForm) {
+  async loginWithEmail ({ state }, payload: UserForm) {
     try {
-      const response = await auth.createUserWithEmailAndPassword(user.email, user.password)
+      const response = await loginWithEmail(payload)
       console.log(response)
     } catch (e) {
       console.error(e)
