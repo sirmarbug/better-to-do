@@ -9,8 +9,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import AuthLayout from '@/components/AuthLayout.vue'
-import RegisterForm from '@/components/auth/RegisterForm.vue'
+import { AuthLayout, RegisterForm } from '@/components'
 
 export default defineComponent({
   name: 'Register',

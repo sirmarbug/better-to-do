@@ -1,0 +1,5 @@
+export { default as InputText } from '@/components/forms/InputText.vue'
+export { default as AuthLayout } from '@/components/AuthLayout.vue'
+export { default as DashboardLayout } from '@/components/DashboardLayout.vue'
+export { default as LoginForm } from '@/components/auth/LoginForm.vue'
+export { default as RegisterForm } from '@/components/auth/RegisterForm.vue'

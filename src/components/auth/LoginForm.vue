@@ -41,7 +41,7 @@ import { defineComponent } from 'vue'
 import Button from 'primevue/button'
 import { useRouter } from 'vue-router'
 import { Form } from 'vee-validate'
-import InputText from '@/components/forms/InputText.vue'
+import { InputText } from '@/components'
 import { loginSchema } from '@/plugins/yup'
 import { useAppStore } from '@/use'
 
