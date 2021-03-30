@@ -1,7 +1,7 @@
 <template>
   <div class="p-field">
     <label :for="name" :class="{ 'p-error': errors[name] }">{{ label }}</label>
-    <Field :name="name" :id="name" :type="type" class="p-inputtext p-component p-mb-1" :class="{ 'p-invalid': errors[name] }" :placeholder="placeholder" v-model="value" />
+    <Field :name="name" :id="name" :type="type" class="p-inputtext p-component p-mb-1" :class="{ 'p-invalid': errors[name] }" :placeholder="placeholder" v-model="value" :autocomplete="autocomplete" />
     <small class="p-error">{{ errors[name] }}</small>
   </div>
 </template>
@@ -36,6 +36,10 @@ export default defineComponent({
       default: ''
     },
     placeholder: {
+      type: String,
+      default: ''
+    },
+    autocomplete: {
       type: String,
       default: ''
     }

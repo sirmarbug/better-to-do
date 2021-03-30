@@ -8,6 +8,7 @@
             type="text"
             label="E-mail"
             placeholder="Adres E-mail"
+            autocomplete="username"
             :errors="errors"
           />
         </div>
@@ -17,6 +18,7 @@
             type="password"
             label="Password"
             placeholder="Password"
+            autocomplete="current-password"
             :errors="errors"
           />
         </div>
