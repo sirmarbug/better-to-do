@@ -1,5 +1,8 @@
 <template>
   <AuthLayout>
+    <template #image>
+      <img class="w-100 h-100" :src="require('@/assets/register-background.jpg')">
+    </template>
     <template #content>
       <h1 class="p-text-center">Register</h1>
       <RegisterForm/>
