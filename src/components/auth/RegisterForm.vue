@@ -49,13 +49,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from 'vue'
+import { defineComponent } from 'vue'
 import { InputText } from '@/components'
 import Button from 'primevue/button'
 import { useRouter } from 'vue-router'
 import { useAppStore } from '@/use'
 import { Form } from 'vee-validate'
 import { registerSchema } from '@/plugins/yup'
+import { UserForm } from '@/types'
 
 export default defineComponent({
   name: 'RegisterForm',
@@ -68,7 +69,7 @@ export default defineComponent({
       router.push({ path: '/login' })
     }
 
-    const onRegisterClick = async (value: any) => {
+    const onRegisterClick = async (value: UserForm) => {
       await store.dispatch('auth/createUser', value)
     }
 

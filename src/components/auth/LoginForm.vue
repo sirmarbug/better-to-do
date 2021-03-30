@@ -46,6 +46,7 @@ import { Form } from 'vee-validate'
 import { InputText } from '@/components'
 import { loginSchema } from '@/plugins/yup'
 import { useAppStore } from '@/use'
+import { UserForm } from '@/types'
 
 export default defineComponent({
   name: 'LoginForm',
@@ -58,8 +59,7 @@ export default defineComponent({
       router.push({ path: '/register' })
     }
 
-    const onSubmit = async (value: any, actions: any) => {
-      console.log('onSubmit', value)
+    const onSubmit = async (value: UserForm) => {
       await store.dispatch('auth/loginWithEmail', value)
     }
 
