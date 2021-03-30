@@ -38,7 +38,6 @@ export default defineComponent({
 .auth-layout-image,
 .auth-layout-content {
   height: 100vh;
-  padding: 0;
 }
 
 .auth-layout-content {
