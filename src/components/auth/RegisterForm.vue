@@ -2,7 +2,7 @@
   <div class="register-form">
     <Form @submit="onRegisterClick" :validation-schema="registerSchema" v-slot="{ errors }">
       <div class="p-fluid p-grid p-mt-5">
-        <div class="p-col-8 p-offset-2">
+        <div class="p-col-12">
           <InputText
             name="email"
             type="text"
@@ -12,7 +12,9 @@
             :errors="errors"
           />
         </div>
-        <div class="p-col-8 p-offset-2">
+      </div>
+      <div class="p-fluid p-grid">
+        <div class="p-col-12">
           <InputText
             name="password"
             type="password"
@@ -22,7 +24,9 @@
             :errors="errors"
           />
         </div>
-        <div class="p-col-8 p-offset-2">
+      </div>
+      <div class="p-fluid p-grid">
+        <div class="p-col-12">
           <InputText
             name="confirmPassword"
             type="password"
@@ -34,17 +38,17 @@
         </div>
       </div>
       <div class="p-fluid p-grid p-mb-5">
-        <div class="p-col-8 p-offset-2">
+        <div class="p-col-12">
           <Button label="Register" type="submit"/>
         </div>
       </div>
-      <div class="p-grid">
-        <div class="p-col-8 p-offset-2 p-d-flex p-align-center">
-          <span class="p-mr-2">Do you already have an account?</span>
-          <Button label="Login" class="p-button-text" @click="onLoginClick" />
-        </div>
-      </div>
     </Form>
+    <div class="p-grid">
+      <div class="p-col-12 p-d-flex p-align-center">
+        <span class="p-mr-2">Do you already have an account?</span>
+        <Button label="Login" class="p-button-text" @click="onLoginClick" />
+      </div>
+    </div>
   </div>
 </template>
 
