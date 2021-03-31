@@ -6,6 +6,7 @@ module.exports = {
       },
       scss: {
         prependData: `
+          @import "@/styles/reset.scss";
           @import "@/styles/colors.scss";
           @import "@/styles/variables.scss";
         `

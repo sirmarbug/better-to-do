@@ -1,6 +1,6 @@
 <template>
   <div class="auth-layout">
-    <div class="p-grid">
+    <div class="p-grid p-nogutter">
       <div class="p-col-7 auth-layout-image">
         <slot name="image"/>
         <div class="auth-layout-image-bg"/>
