@@ -1,14 +1,13 @@
+import firebase from 'firebase'
+import UserInfo = firebase.UserInfo
+
 export interface AppState {
   loading: boolean;
   auth?: AuthState;
 }
 
 export interface AuthState {
-  user: User;
-}
-
-export interface User {
-  [key: string]: any;
+  user: UserInfo | null;
 }
 
 export interface UserForm {
