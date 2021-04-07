@@ -8,3 +8,7 @@ export function createUser (user: UserForm) {
 export function loginWithEmail (user: UserForm) {
   return auth.signInWithEmailAndPassword(user.email, user.password)
 }
+
+export function logout () {
+  return auth.signOut()
+}
